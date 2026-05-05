@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+.text-preset-1 {
+  @apply font-inter font-semibold text-[4rem] leading-[110%] tracking-[-5%];
+}
+
+.text-preset-2 {
+  @apply font-inter font-semibold text-5xl leading-[110%] tracking-[-5%];
+}
+
+.text-preset-3 {
+  @apply font-inter font-semibold text-[2rem] leading-[110%] tracking-[-5%];
+}
+
+.text-preset-4 {
+  @apply font-inter font-semibold text-2xl leading-[120%] tracking-[-5%];
+}
+
+.text-preset-5 {
+  @apply font-inter font-semibold text-xl leading-[120%] tracking-[-5%];
+}
+
+.text-preset-6-semibold {
+  @apply font-inter font-semibold text-base leading-[150%];
+}
+
+.text-preset-6-regular {
+  @apply font-inter font-normal text-base leading-[150%];
+}
+
+.text-preset-7-bold {
+  @apply font-inter font-bold text-sm leading-[150%];
+}
+
+.text-preset-7-regular {
+  @apply font-inter font-normal text-sm leading-[150%];
+}
+
+.gradient {
+  @apply bg-linear-45 from-[#d6fcfe] to-{#d6e6fe};
+}
+
+.background {
+    @apply before:content-[``] before:absolute before:top-0 before:left-0 before:w-full before:gradient before:h-160;
+}
