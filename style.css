@@ -1,45 +1,62 @@
 @import "tailwindcss";
+@theme {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-grey-500: #5e6e85;
+  --color-grey-300: #acc1de;
+  --color-blue-900: #253347;
+  --color-blue-500: #345ff6;
+  --color-blue-300: #b3d3f1;
+  --color-blue-100: #e1e7fe;
+  --color-radio-br: #d8e2e7;
+  --color-gradient-1: #d6fcfe;
+  --color-gradient-2: #d6e6fe;
 
-.text-preset-1 {
-  @apply font-inter font-semibold text-[4rem] leading-[110%] tracking-[-5%];
+  --font-inter: "Inter", "sans-serif";
+
+  --shadow-custom: 16px 32px 56px 0 #8faecf40;
 }
 
-.text-preset-2 {
-  @apply font-inter font-semibold text-5xl leading-[110%] tracking-[-5%];
-}
+@layer components {
+  .test {
+  }
+  .text-preset-1 {
+    @apply font-inter font-semibold text-6xl leading-[110%] tracking-[-5%];
+  }
 
-.text-preset-3 {
-  @apply font-inter font-semibold text-[2rem] leading-[110%] tracking-[-5%];
-}
+  .text-preset-uno {
+    @apply font-inter font-semibold text-[4rem] leading-[110%] tracking-[-5%];
+  }
 
-.text-preset-4 {
-  @apply font-inter font-semibold text-2xl leading-[120%] tracking-[-5%];
-}
+  .text-preset-2 {
+    @apply font-inter font-semibold text-5xl leading-[110%] tracking-[-5%];
+  }
 
-.text-preset-5 {
-  @apply font-inter font-semibold text-xl leading-[120%] tracking-[-5%];
-}
+  .text-preset-3 {
+    @apply font-inter font-semibold text-[2rem] leading-[110%] tracking-[-5%];
+  }
 
-.text-preset-6-semibold {
-  @apply font-inter font-semibold text-base leading-[150%];
-}
+  .text-preset-4 {
+    @apply font-inter font-semibold text-2xl leading-[120%] tracking-[-5%];
+  }
 
-.text-preset-6-regular {
-  @apply font-inter font-normal text-base leading-[150%];
-}
+  .text-preset-5 {
+    @apply font-inter font-semibold text-xl leading-[120%] tracking-[-5%];
+  }
 
-.text-preset-7-bold {
-  @apply font-inter font-bold text-sm leading-[150%];
-}
+  .text-preset-6-semibold {
+    @apply font-inter font-semibold text-base leading-[150%];
+  }
 
-.text-preset-7-regular {
-  @apply font-inter font-normal text-sm leading-[150%];
-}
+  .text-preset-6-regular {
+    @apply font-inter font-normal text-base leading-[150%];
+  }
 
-.gradient {
-  @apply bg-linear-45 from-[#d6fcfe] to-{#d6e6fe};
-}
+  .text-preset-7-bold {
+    @apply font-inter font-bold text-sm leading-[150%];
+  }
 
-.background {
-    @apply before:content-[``] before:absolute before:top-0 before:left-0 before:w-full before:gradient before:h-160;
+  .text-preset-7-regular {
+    @apply font-inter font-normal text-sm leading-[150%];
+  }
 }

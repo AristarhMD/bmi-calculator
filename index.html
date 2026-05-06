@@ -10,9 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Tailwind CSS and general file for styling -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
+    <title>Document</title>
     <style type="text/tailwindcss">
       @theme {
         --color-black: #000;
@@ -34,6 +38,10 @@
 
       @layer components {
         .text-preset-1 {
+          @apply font-inter font-semibold text-6xl leading-[110%] tracking-[-5%];
+        }
+
+        .text-preset-uno {
           @apply font-inter font-semibold text-[4rem] leading-[110%] tracking-[-5%];
         }
 
@@ -70,204 +78,237 @@
         }
       }
     </style>
-    <title>Document</title>
   </head>
   <body>
-    <div class="container">
+    <div class="w-full">
       <section
-        class="hero pt-8 px-6 pb-16 flex flex-col gap-6 items-center relative md:px-10 md:gap-10"
+        class="hero pt-8 px-6 pb-16 flex flex-col gap-6 items-center relative md:px-10 md:gap-10 md:mb-22 xl:py-22 xl:px-36 xl:mb-0"
       >
         <div
-          class="absolute top-0 right-0 w-full h-7/12 rounded-b-[35px] bg-linear-to-r from-gradient-1/0% to-gradient-2 -z-10"
+          class="absolute top-0 left-0 w-full h-7/12 rounded-b-[35px] bg-linear-to-r from-gradient-1/0% to-gradient-2 -z-10 xl:w-8/12 xl:h-full"
           aria-label="backgound gradiend"
         ></div>
-        <img src="images/logo.svg" alt="logo of the company" class="w-9" />
-        <header class="flex flex-col gap-6 items-center">
-          <h1 class="text-preset-2 text-blue-900 text-center w-9/12 md:w-[48%]">
-            Body Mass Index Calculator
-          </h1>
-
-          <p class="text-preset-6-regular text-grey-500 text-center">
-            Better understand your weight in relation to your height using our
-            body mass index (BM) calculator. While BMI is not the sole
-            determinant of a healthy weight, it offers a valuable starting point
-            to evaluate your overall health and well-being.
-          </p>
-        </header>
-        <form
-          action=""
-          class="w-[clamp(20.5rem,87.46%,42.87rem)] p-6 shadow-custom bg-white rounded-2xl flex flex-col gap-6 items-center md:p-8"
+        <img
+          src="images/logo.svg"
+          alt="logo of the company"
+          class="w-9 xl:w-15 xl:mr-auto"
+        />
+        <main
+          class="flex flex-col gap-6 items-center md:gap-10 xl:grid xl:grid-cols-2 xl:gap-8"
         >
-          <p class="text-preset-4 text-blue-900 self-start">
-            Enter your details below
-          </p>
+          <header
+            class="flex flex-col gap-6 items-center xl:w-full xl:self-start xl:mt-18"
+          >
+            <h1
+              class="text-preset-2 text-blue-900 text-center w-9/12 md:w-[48%] xl:text-6xl xl:w-[73%] xl:text-left xl:self-start"
+            >
+              Body Mass Index Calculator
+            </h1>
 
-          <!-- Check measure type -->
-          <div class="flex gap-6 w-full">
-            <div class="flex items-center gap-4 w-1/2">
-              <div class="relative flex">
-                <input
-                  type="radio"
-                  name="measure"
-                  id="metric"
-                  class="peer appearance-none h-8 w-8 rounded-full border border-grey-500 checked:border-radio-br checked:bg-blue-100"
-                />
-                <span
-                  class="absolute w-4 h-4 top-0 right-0 translate-y-1/2 -translate-x-1/2 bg-blue-500 rounded-full hidden peer-checked:block"
-                ></span>
-              </div>
-              <label for="metric" class="text-preset-6-semibold text-blue-900"
-                >Metric</label
-              >
-            </div>
-            <div class="flex items-center gap-4 w-1/2">
-              <div class="relative flex">
-                <input
-                  type="radio"
-                  name="measure"
-                  id="imperial"
-                  class="peer appearance-none h-8 w-8 rounded-full border border-grey-500 checked:border-radio-br checked:bg-blue-100"
-                />
-                <span
-                  class="absolute w-4 h-4 top-0 right-0 translate-y-1/2 -translate-x-1/2 bg-blue-500 rounded-full hidden peer-checked:block"
-                ></span>
-              </div>
-              <label for="imperial" class="text-preset-6-semibold text-blue-900"
-                >Imperial</label
-              >
-            </div>
-          </div>
-
-          <!-- Insert data -->
-          <!-- For metric -->
-          <div class="w-full flex flex-col gap-4 md:flex-row">
-            <div>
-              <label for="height" class="text-preset-7-regular text-grey-500"
-                >Height</label
-              >
-              <div
-                class="for-metric border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between"
-              >
-                <input
-                  type="text"
-                  id="height"
-                  name="height"
-                  placeholder="0"
-                  class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-[clamp(10.81rem,74.56%,12rem)]"
-                />
-                <span class="text-preset-4 text-blue-500">cm</span>
-              </div>
-            </div>
-
-            <div>
-              <label for="weight" class="text-preset-7-regular text-grey-500"
-                >Weight</label
-              >
-              <div
-                class="border border-grey-500 rounded-xl p-6 mt-2 flex justify-between items-center"
-              >
-                <input
-                  type="text"
-                  id="weight"
-                  name="weight"
-                  placeholder="0"
-                  class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-[clamp(10.81rem,74.56%,12rem)]"
-                />
-                <span class="text-preset-4 text-blue-500">kg</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- For imperial -->
-          <div class="w-full flex flex-col gap-4 hidden">
-            <div class="w-full">
-              <label for="height" class="text-preset-7-regular text-grey-500"
-                >Height</label
-              >
-              <div class="for-imperial flex gap-4">
-                <div
-                  class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2"
-                >
-                  <input
-                    type="text"
-                    id="foot"
-                    name="foot"
-                    placeholder="0"
-                    class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
-                  />
-                  <span class="text-preset-4 text-blue-500">ft</span>
-                </div>
-                <div
-                  class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2"
-                >
-                  <input
-                    type="text"
-                    id="inch"
-                    name="inch"
-                    placeholder="0"
-                    class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
-                  />
-                  <span class="text-preset-4 text-blue-500">in</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <label for="weight" class="text-preset-7-regular text-grey-500"
-                >Weight</label
-              >
-              <div class="for-imperial flex gap-4">
-                <div
-                  class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2"
-                >
-                  <input
-                    type="text"
-                    id="foot"
-                    name="foot"
-                    placeholder="0"
-                    class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
-                  />
-                  <span class="text-preset-4 text-blue-500">st</span>
-                </div>
-                <div
-                  class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2"
-                >
-                  <input
-                    type="text"
-                    id="inch"
-                    name="inch"
-                    placeholder="0"
-                    class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
-                  />
-                  <span class="text-preset-4 text-blue-500">lbs</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Result -->
-          <div class="w-full bg-blue-500 rounded-2xl p-8 md:rounded-r-full">
-            <p class="text-preset-4 text-white mb-6">Welcome!</p>
-
-            <p class="text-preset-7-regular text-white">
-              Enter your height and weight and you’ll see your BMI result here
+            <p
+              class="text-preset-6-regular text-grey-500 text-center xl:text-left"
+            >
+              Better understand your weight in relation to your height using our
+              body mass index (BM) calculator. While BMI is not the sole
+              determinant of a healthy weight, it offers a valuable starting
+              point to evaluate your overall health and well-being.
             </p>
-          </div>
-        </form>
+          </header>
+          <form
+            action=""
+            class="w-[clamp(20.5rem,87.46%,42.87rem)] p-6 shadow-custom bg-white rounded-2xl flex flex-col gap-6 items-center md:p-8 xl:w-full"
+          >
+            <p class="text-preset-4 text-blue-900 self-start">
+              Enter your details below
+            </p>
+
+            <!-- Check measure type -->
+            <div class="flex gap-6 w-full">
+              <div class="flex items-center gap-4 w-1/2">
+                <div class="relative flex cursor-pointer">
+                  <input
+                    checked
+                    type="radio"
+                    name="measure"
+                    id="metric"
+                    value="metric"
+                    class="peer appearance-none h-8 w-8 rounded-full border border-grey-500 checked:border-radio-br checked:bg-blue-100"
+                  />
+                  <span
+                    class="absolute w-4 h-4 top-0 right-0 translate-y-1/2 -translate-x-1/2 bg-blue-500 rounded-full hidden peer-checked:block"
+                  ></span>
+                </div>
+                <label
+                  for="metric"
+                  class="text-preset-6-semibold text-blue-900 cursor-pointer"
+                  >Metric</label
+                >
+              </div>
+              <div class="flex items-center gap-4 w-1/2">
+                <div class="relative flex cursor-pointer">
+                  <input
+                    type="radio"
+                    name="measure"
+                    id="imperial"
+                    value="imperial"
+                    class="peer appearance-none h-8 w-8 rounded-full border border-grey-500 checked:border-radio-br checked:bg-blue-100"
+                  />
+                  <span
+                    class="absolute w-4 h-4 top-0 right-0 translate-y-1/2 -translate-x-1/2 bg-blue-500 rounded-full hidden peer-checked:block"
+                  ></span>
+                </div>
+                <label
+                  for="imperial"
+                  class="text-preset-6-semibold text-blue-900 cursor-pointer"
+                  >Imperial</label
+                >
+              </div>
+            </div>
+
+            <!-- Insert data -->
+            <!-- For metric -->
+            <div
+              class="metric-container w-full flex flex-col gap-4 md:flex-row"
+            >
+              <div class="cursor-pointer">
+                <label
+                  for="height"
+                  class="text-preset-7-regular text-grey-500 cursor-pointer"
+                  >Height</label
+                >
+                <div
+                  class="for-metric border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between cursor-pointer"
+                >
+                  <input
+                    type="text"
+                    id="height"
+                    name="height"
+                    placeholder="0"
+                    class="text-preset-4 focus:outline-none placeholder:text-grey-500 text-blue-900 w-[clamp(10.81rem,74.56%,12rem)]"
+                  />
+                  <span class="text-preset-4 text-blue-500">cm</span>
+                </div>
+              </div>
+
+              <div class="cursor-pointer">
+                <label
+                  for="weight"
+                  class="text-preset-7-regular text-grey-500 cursor-pointer"
+                  >Weight</label
+                >
+                <div
+                  class="border border-grey-500 rounded-xl p-6 mt-2 flex justify-between items-center cursor-pointer"
+                >
+                  <input
+                    type="text"
+                    id="weight"
+                    name="weight"
+                    placeholder="0"
+                    class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-[clamp(10.81rem,74.56%,12rem)]"
+                  />
+                  <span class="text-preset-4 text-blue-500">kg</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- For imperial -->
+            <div class="imperial-container w-full flex flex-col gap-4 hidden">
+              <div class="w-full">
+                <label for="height" class="text-preset-7-regular text-grey-500"
+                  >Height</label
+                >
+                <div class="for-imperial flex gap-4">
+                  <div
+                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                  >
+                    <input
+                      type="text"
+                      id="foot"
+                      name="foot"
+                      placeholder="0"
+                      class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
+                    />
+                    <span class="text-preset-4 text-blue-500">ft</span>
+                  </div>
+                  <div
+                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                  >
+                    <input
+                      type="text"
+                      id="inch"
+                      name="inch"
+                      placeholder="0"
+                      class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
+                    />
+                    <span class="text-preset-4 text-blue-500">in</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label for="weight" class="text-preset-7-regular text-grey-500"
+                  >Weight</label
+                >
+                <div class="for-imperial flex gap-4">
+                  <div
+                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                  >
+                    <input
+                      type="text"
+                      id="stone"
+                      name="stone"
+                      placeholder="0"
+                      class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
+                    />
+                    <span class="text-preset-4 text-blue-500">st</span>
+                  </div>
+                  <div
+                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                  >
+                    <input
+                      type="text"
+                      id="pounds"
+                      name="pounds"
+                      placeholder="0"
+                      class="focus:outline-none placeholder:text-grey-500 text-blue-900 text-preset-4 w-1/2"
+                    />
+                    <span class="text-preset-4 text-blue-500">lbs</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result -->
+            <div
+              class="result w-full bg-blue-500 rounded-2xl p-8 md:rounded-r-full"
+            >
+              <p class="text-preset-4 text-white mb-6">Welcome!</p>
+
+              <p class="text-preset-7-regular text-white">
+                Enter your height and weight and you’ll see your BMI result here
+              </p>
+            </div>
+          </form>
+        </main>
       </section>
 
       <section
-        class="w-full flex flex-col gap-12 items-center justify-center mb-16 md:flex-row"
+        class="bg-white w-full flex flex-col gap-12 items-center justify-center mb-16 md:grid md:grid-cols-2 md:-ml-10 md:gap-x-18 md:mb-24 xl:px-35 xl:pb-24 xl:pt-12 xl:mb-0 xl:gap-0 xl:relative xl:before:content-[''] xl:before:absolute xl:before:bg-[url(/images/pattern-curved-line-left.svg)] xl:before:w-22 xl:before:h-50 xl:before:top-0 xl:before:right-1/8"
       >
-        <div class="-ml-25">
+        <div class="w-full h-full">
           <img
             src="images/image-man-eating.webp"
             alt="Image of the man eating sushi"
+            class="w-full h-full object-cover object-center"
           />
         </div>
 
-        <div class="w-10/12">
-          <p class="text-preset-3 text-blue-900 mb-8">
+        <div
+          class="w-10/12 md:w-82 xl:w-115 xl:justify-self-end xl:mt-auto xl:mb-11 2xl:justify-self-center 2xl:my-0"
+        >
+          <p
+            class="text-preset-3 text-blue-900 mb-8 xl:text-5xl xl:text-preset-2"
+          >
             What your BMI result means
           </p>
           <p class="text-preset-6-regular text-grey-500">
@@ -283,13 +324,13 @@
       </section>
 
       <section
-        class="py-12 px-6 bg-linear-to-r from-gradient-1/0% to-gradient-2 flex flex-col gap-10"
+        class="py-12 px-6 bg-linear-to-r from-gradient-1/0% to-gradient-2 flex flex-col gap-10 md:px-10 md:py-13 md:mb-24 xl:flex-row xl:bg-none xl:px-32 xl:py-24 xl:relative xl:before:top-0 xl:before:left-0 xl:before:content[''] xl:before:absolute xl:before:w-[95%] xl:before:h-full xl:before:bg-linear-to-r xl:before:from-gradient-1/0% xl:before:to-gradient-2 xl:before:rounded-[35px] xl:before:-z-10 xl:before:opacity-25 xl:mb-0"
       >
-        <div>
+        <div class="md:flex md:gap-10 xl:flex-col">
           <img
             src="images/icon-eating.svg"
             alt="icon of the bowl with ramen"
-            class="mb-8"
+            class="mb-8 md:mb-0 md:w-16"
           />
 
           <div>
@@ -301,11 +342,11 @@
           </div>
         </div>
 
-        <div>
+        <div class="md:flex md:gap-10 xl:flex-col">
           <img
             src="images/icon-exercise.svg"
             alt="icon of the dumbbells"
-            class="mb-8"
+            class="mb-8 md:mb-0 md:w-16"
           />
 
           <div>
@@ -317,8 +358,12 @@
           </div>
         </div>
 
-        <div>
-          <img src="images/icon-sleep.svg" alt="icon for sleep" class="mb-8" />
+        <div class="md:flex md:gap-10 xl:flex-col">
+          <img
+            src="images/icon-sleep.svg"
+            alt="icon for sleep"
+            class="mb-8 md:mb-0 md:w-16"
+          />
 
           <div>
             <p class="mb-6 text-preset-4 text-blue-900">Adequate sleep</p>
@@ -331,9 +376,9 @@
       </section>
 
       <section
-        class="mt-20 w-[clamp(20.43rem,87.2%,42.87rem)] text-center mx-auto pb-24"
+        class="mt-20 w-[clamp(20.43rem,87.2%,42.87rem)] text-center mx-auto pb-24 md:mt-0 xl:w-full xl:py-24 xl:px-36 xl:flex xl:relative xl:before:content-[''] xl:before:absolute xl:before:bg-[url(/images/pattern-curved-line-right.svg)] xl:before:bg-no-repeat xl:before:bg-cover xl:before:w-22 xl:before:h-50 xl:before:top-1/2 xl:before:-translate-y-1/2 xl:before:left-1/6"
       >
-        <header class="mb-14">
+        <header class="mb-14 xl:mb-0 xl:w-135 xl:absolute xl:text-left">
           <p class="text-preset-3 text-blue-900 mb-8">Limitations of BMI</p>
           <p class="text-preset-6-regular text-grey-500">
             Although BMI is often a practical indicator of healthy weight, it is
@@ -342,9 +387,11 @@
             may not be beneficial to use.
           </p>
         </header>
-        <main class="flex flex-col gap-4">
+        <main
+          class="flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-[repeat(5,minmax(10.3rem,1fr))] xl:grid-rows-3 xl:gap-x-8 xl:gap-y-6 xl:ml-auto"
+        >
           <article
-            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl"
+            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl xl:col-start-3 xl:col-span-2 xl:w-90"
           >
             <img
               src="images/icon-gender.svg"
@@ -364,7 +411,7 @@
           </article>
 
           <article
-            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl"
+            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl xl:col-start-2 xl:col-span-2 xl:w-90"
           >
             <img
               src="images/icon-age.svg"
@@ -383,7 +430,7 @@
           </article>
 
           <article
-            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl"
+            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl xl:col-start-4 xl:col-span-2 xl:w-90"
           >
             <img
               src="images/icon-muscle.svg"
@@ -396,14 +443,13 @@
               Muscle
             </p>
             <p class="text-preset-6-regular text-grey-500 col-span-2 text-left">
-              The development and body fat composition of girls and boys vary
-              with age. Consequently, a child's age and gender are considered
-              when evaluating their BMI.
+              BMI may misclassify muscular individuals as overweight or obese,
+              as it doesn't differentiate muscle from fat.
             </p>
           </article>
 
           <article
-            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl"
+            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl xl:col-start-1 xl:col-span-2 xl:w-90"
           >
             <img
               src="images/icon-pregnancy.svg"
@@ -423,7 +469,7 @@
           </article>
 
           <article
-            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl"
+            class="p-6 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-4 gap-y-4 place-content-center shadow-custom rounded-2xl md:col-span-2 md:place-self-center md:w-1/2 xl:col-start-3 xl:col-span-2 xl:w-90"
           >
             <img
               src="images/icon-race.svg"
