@@ -10,74 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Tailwind CSS and general file for styling -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
     <script src="script.js" defer></script>
     <title>Document</title>
-    <style type="text/tailwindcss">
-      @theme {
-        --color-black: #000;
-        --color-white: #fff;
-        --color-grey-500: #5e6e85;
-        --color-grey-300: #acc1de;
-        --color-blue-900: #253347;
-        --color-blue-500: #345ff6;
-        --color-blue-300: #b3d3f1;
-        --color-blue-100: #e1e7fe;
-        --color-radio-br: #d8e2e7;
-        --color-gradient-1: #d6fcfe;
-        --color-gradient-2: #d6e6fe;
-
-        --font-inter: "Inter", "sans-serif";
-
-        --shadow-custom: 16px 32px 56px 0 #8faecf40;
-      }
-
-      @layer components {
-        .text-preset-1 {
-          @apply font-inter font-semibold text-6xl leading-[110%] tracking-[-5%];
-        }
-
-        .text-preset-uno {
-          @apply font-inter font-semibold text-[4rem] leading-[110%] tracking-[-5%];
-        }
-
-        .text-preset-2 {
-          @apply font-inter font-semibold text-5xl leading-[110%] tracking-[-5%];
-        }
-
-        .text-preset-3 {
-          @apply font-inter font-semibold text-[2rem] leading-[110%] tracking-[-5%];
-        }
-
-        .text-preset-4 {
-          @apply font-inter font-semibold text-2xl leading-[120%] tracking-[-5%];
-        }
-
-        .text-preset-5 {
-          @apply font-inter font-semibold text-xl leading-[120%] tracking-[-5%];
-        }
-
-        .text-preset-6-semibold {
-          @apply font-inter font-semibold text-base leading-[150%];
-        }
-
-        .text-preset-6-regular {
-          @apply font-inter font-normal text-base leading-[150%];
-        }
-
-        .text-preset-7-bold {
-          @apply font-inter font-bold text-sm leading-[150%];
-        }
-
-        .text-preset-7-regular {
-          @apply font-inter font-normal text-sm leading-[150%];
-        }
-      }
-    </style>
   </head>
   <body>
     <div class="w-full">
@@ -170,7 +106,7 @@
             <div
               class="metric-container w-full flex flex-col gap-4 md:flex-row"
             >
-              <div class="cursor-pointer">
+              <div class="input-container cursor-pointer">
                 <label
                   for="height"
                   class="text-preset-7-regular text-grey-500 cursor-pointer"
@@ -190,7 +126,7 @@
                 </div>
               </div>
 
-              <div class="cursor-pointer">
+              <div class="input-container cursor-pointer">
                 <label
                   for="weight"
                   class="text-preset-7-regular text-grey-500 cursor-pointer"
@@ -212,14 +148,14 @@
             </div>
 
             <!-- For imperial -->
-            <div class="imperial-container w-full flex flex-col gap-4 hidden">
+            <div class="imperial-container w-full flex-col gap-4 hidden">
               <div class="w-full">
                 <label for="height" class="text-preset-7-regular text-grey-500"
                   >Height</label
                 >
                 <div class="for-imperial flex gap-4">
                   <div
-                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                    class="input-container border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
                   >
                     <input
                       type="text"
@@ -231,7 +167,7 @@
                     <span class="text-preset-4 text-blue-500">ft</span>
                   </div>
                   <div
-                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                    class="input-container border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
                   >
                     <input
                       type="text"
@@ -251,7 +187,7 @@
                 >
                 <div class="for-imperial flex gap-4">
                   <div
-                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                    class="input-container border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
                   >
                     <input
                       type="text"
@@ -263,7 +199,7 @@
                     <span class="text-preset-4 text-blue-500">st</span>
                   </div>
                   <div
-                    class="border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
+                    class="input-container border border-grey-500 rounded-xl p-6 mt-2 flex items-center justify-between w-1/2 cursor-pointer"
                   >
                     <input
                       type="text"

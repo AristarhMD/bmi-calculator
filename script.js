@@ -2,7 +2,8 @@ const formEl = document.querySelector("form");
 const resultEl = document.querySelector(".result");
 const metricContainerEl = document.querySelector(".metric-container");
 const imperialContainerEl = document.querySelector(".imperial-container");
-const measureTypeEl = document.querySelectorAll("input[name='measure']");
+const measureTypeEls = document.querySelectorAll("input[name='measure']");
+const inputContainers = document.querySelectorAll(".input-container");
 
 formReset();
 
@@ -12,6 +13,11 @@ formEl.addEventListener("input", (e) => {
   const rawData = new FormData(formEl);
   const data = Object.fromEntries(rawData);
 
+  calculate(data);
+});
+
+function calculate(data) {
+  // Check for metric input
   if (data.measure === "metric") {
     if (data.height > 0 && data.weight > 0) {
       const bmi = ((data.weight / (data.height * data.height)) * 10000).toFixed(
@@ -45,6 +51,7 @@ formEl.addEventListener("input", (e) => {
     }
   }
 
+  // Check for imperial input
   if (data.measure === "imperial") {
     if (data.foot >= 0 && data.inch > 0 && data.stone >= 0 && data.pounds > 0) {
       const totalIn = Math.pow(Number(data.foot) * 12 + Number(data.inch), 2);
@@ -83,18 +90,26 @@ formEl.addEventListener("input", (e) => {
               </p>`;
     }
   }
-});
+}
 
-measureTypeEl.forEach((measure) => {
+measureTypeEls.forEach((measure) => {
   measure.addEventListener("change", (e) => {
     if (e.target.checked) {
       metricContainerEl.classList.toggle("hidden");
+      metricContainerEl.classList.toggle("flex");
       imperialContainerEl.classList.toggle("hidden");
+      imperialContainerEl.classList.toggle("flex");
     }
+  });
+});
+
+inputContainers.forEach((container) => {
+  container.addEventListener("click", () => {
+    container.querySelector("input").focus();
   });
 });
 
 function formReset() {
   formEl.reset();
-  measureTypeEl[0].checked;
+  measureTypeEls[0].checked;
 }
